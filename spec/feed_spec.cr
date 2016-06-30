@@ -15,4 +15,10 @@ describe JDA::Feed do
     feed.read
     feed.data[0][9].strip.should eq "247205FWCZG"
   end
+
+  it "should return base name" do
+    src = File.expand_path("../../samples/ebuskr.txt", __FILE__)
+    feed = JDA::Feed.new(src)
+    feed.name.should eq "ebuskr.txt"
+  end
 end

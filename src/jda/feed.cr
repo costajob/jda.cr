@@ -21,6 +21,10 @@ module JDA
       @data.as(Array(Array(String)))
     end
 
+    def name
+      File.basename(@src.as(String))
+    end
+
     private def check_src
       raise NoSrcError.new("missing path to feed") unless @src
       raise InvalidExtError.new("invalid feed extension, supported are: #{VALID_EXTENSIONS.join(", ")}") unless valid_ext?
