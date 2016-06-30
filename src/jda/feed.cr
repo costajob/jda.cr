@@ -6,8 +6,6 @@ module JDA
 
     class NoSrcError < ArgumentError; end
 
-    class InvalidExtError < ArgumentError; end
-
     def self.ext_pattern
       String.build do |str|
         str << "*{"
@@ -19,7 +17,7 @@ module JDA
     @data : Array(Array(String))?
 
     def initialize(@src : String?)
-      check_src
+      raise NoSrcError.new("missing path to feed") unless @src
     end
 
     def read
@@ -32,19 +30,6 @@ module JDA
 
     def name
       File.basename(@src.as(String))
-    end
-
-    private def check_src
-      raise NoSrcError.new("missing path to feed") unless @src
-      raise InvalidExtError.new("invalid feed extension, supported are: #{VALID_EXTENSIONS.join(", ")}") unless valid_ext?
-    end
-
-    private def ext
-      File.extname(@src.as(String))
-    end
-
-    private def valid_ext?
-      VALID_EXTENSIONS.includes?(ext)
     end
   end
 end
