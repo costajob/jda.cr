@@ -1,41 +1,18 @@
-# jda
-
-TODO: Write a description here
+# Scope
+This library is aimed to parse and extract data from CSV JDA files basing on the specified filters.
 
 ## Installation
-
 
 Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
   jda:
-    github: [your-github-name]/jda
+    github: costajob/jda
 ```
 
-
 ## Usage
-
 
 ```crystal
 require "jda"
 ```
-
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[your-github-name]/jda/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [[your-github-name]](https://github.com/[your-github-name]) costajob - creator, maintainer
