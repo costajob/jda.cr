@@ -7,7 +7,7 @@ module JDA
 
     getter :results
 
-    def initialize(@filters : Array(Filters::Base), @feeds_path = DEFAULT_PATH)
+    def initialize(@filters : Array(Filters::Base), @path = DEFAULT_PATH)
       @results = Hash(String, Array(Array(String))).new do |h, k|
         h[k] = [] of Array(String)
       end
@@ -22,8 +22,13 @@ module JDA
       end
     end
 
+    def report
+      call
+      Report.new(@results).render
+    end
+
     private def feeds
-      Dir["#{@feeds_path}/#{Feed.ext_pattern}"].map { |src| Feed.new(src) }
+      Dir["#{@path}/#{Feed.ext_pattern}"].map { |src| Feed.new(src) }
     end
   end
 end
