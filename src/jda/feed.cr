@@ -5,7 +5,16 @@ module JDA
     VALID_EXTENSIONS = %w(.txt)
 
     class NoSrcError < ArgumentError; end
+
     class InvalidExtError < ArgumentError; end
+
+    def self.ext_pattern
+      String.build do |str|
+        str << "*{"
+        str << VALID_EXTENSIONS.join(",")
+        str << "}"
+      end
+    end
 
     @data : Array(Array(String))?
 

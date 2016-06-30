@@ -1,12 +1,17 @@
 require "./spec_helper"
 
 describe JDA::Feed do
+  it "should return feed directory patterns" do
+    JDA::Feed.ext_pattern.should eq "*{.txt}"
+  end
+
   it "should raise an error for missing source" do
     expect_raises(JDA::Feed::NoSrcError) { JDA::Feed.new(nil) }
   end
 
   it "should raise an error for invalid extension" do
-    expect_raises(JDA::Feed::InvalidExtError) { JDA::Feed.new("./feed.png") }
+    src = File.expand_path("../../samples/ebuspf1.pdf", __FILE__)
+    expect_raises(JDA::Feed::InvalidExtError) { JDA::Feed.new(src) }
   end
 
   it "should parse CSV data" do

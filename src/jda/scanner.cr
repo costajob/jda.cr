@@ -23,7 +23,7 @@ module JDA
     end
 
     private def feeds
-      Dir["#{@feeds_path}/*"].map { |src| Feed.new(src) }
+      Dir["#{@feeds_path}/#{Feed.ext_pattern}"].map { |src| Feed.new(src) }
     end
   end
 end
