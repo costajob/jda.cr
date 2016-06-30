@@ -27,4 +27,4 @@
 805071308  ,25001  ,"Flagship                      ",2        ,0        ,0        ,100  ,"HANDBAGS                 ",1       ,"246907A2O0G    ",2703  ,"0099","2703/ /NEW JACKIE MD OLD LIBEC",3505000.00     ," ",0       ,0      ,4
 805889258  ,25001  ,"Flagship                      ",1        ,0        ,0        ,100  ,"HANDBAGS                 ",1       ,"323658ECT0G    ",1000  ,"0099","1000/ /BORSA BAMBOO SHOPPER PI",5380000.00     ," ",0       ,0      ,1
 806073426  ,25001  ,"Flagship                      ",4        ,0        ,0        ,100  ,"HANDBAGS                 ",1       ,"362968AZB0N    ",1000  ,"0099","1000/ /JACKIE SOFT GRAND PRIX ",3440000.00     ," ",0       ,0      ,8
-806073427  ,25001  ,"Flagship                      ",3        ,0        ,0        ,100  ,"HANDBAGS                 ",1       ,"362968AZB0N    ",2612  ,"0099","2612/ /JACKIE SOFT GRAND PRIX ",3440000.00     ," ",0       ,0      ,6
+806578069  ,25005  ,"Shinsegae Main                ",1        ,0        ,0        ,200  ,"WOMENS SHOES             ",1       ,"387893A9L00    ",1000  ,"4004","1000/35+  /S.TTO PELLE S. GOMM",699000.00      ,"Y",151127  ,0      ,1
