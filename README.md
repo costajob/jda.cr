@@ -57,5 +57,4 @@ I recorded these numbers by inspecting the RAM and CPU consumption via XCode Ins
 
 ## Considerations
 Crystal proved to be blazing fast slurping large files in memory and filtering data.  
-Indeed the Ruby version leverage on one process per CSV, while Crystal runs on one thread only.  
-Said that Crystal throughput is about x5 than ruby ones (i recorded similar results with a GO versions, that runs on all cores) 
+Indeed the Ruby version leverage on one process per CSV, while Crystal runs on one thread only: said that Crystal throughput is about x5 than ruby one (i recorded similar results with a GO version, that runs on all cores) 
