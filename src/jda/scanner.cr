@@ -1,5 +1,6 @@
 require "./filters.cr"
 require "./feed.cr"
+require "./report.cr"
 
 module JDA
   class Scanner
@@ -13,18 +14,14 @@ module JDA
       end
     end
 
-    def call
+    def call(output = MemoryIO.new)
       feeds.each do |feed|
         feed.read.reduce(@results) do |results, row|
           results[feed.name] << row if @filters.all? { |filter| filter.match?(row) }
           results
         end
+        Report.new(feed.name, @results[feed.name]).render(output)
       end
-    end
-
-    def report
-      call
-      Report.new(@results).render
     end
 
     private def feeds
