@@ -12,8 +12,12 @@ describe JDA::Feed do
   it "should parse CSV data" do
     src = File.expand_path("../../samples/ebuskr.txt", __FILE__)
     feed = JDA::Feed.new(src)
-    feed.read
-    feed.data[0][9].strip.should eq "247205FWCZG"
+    skus = [] of String
+    feed.read do |row|
+      skus << row[0]
+    end
+    skus.size.should eq 30
+    skus[0].strip.should eq "804017365"
   end
 
   it "should return base name" do

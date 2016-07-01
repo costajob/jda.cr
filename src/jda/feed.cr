@@ -14,18 +14,16 @@ module JDA
       end
     end
 
-    @data : Array(Array(String))?
-
     def initialize(@src : String?)
       raise NoSrcError.new("missing path to feed") unless @src
     end
 
     def read
-      @data ||= File.open(@src.as(String)) { |f| CSV.parse(f) }
-    end
-
-    def data
-      @data.as(Array(Array(String)))
+      File.open(@src.as(String)) do |f| 
+        CSV.new(f) do |csv|
+          yield(csv.row.to_a)
+        end
+      end
     end
 
     def name

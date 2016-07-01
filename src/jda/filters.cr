@@ -1,3 +1,5 @@
+require "csv"
+
 module JDA
   module Filters
     abstract struct Base

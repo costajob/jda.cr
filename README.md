@@ -53,7 +53,7 @@ I recorded these numbers by inspecting the RAM and CPU consumption via XCode Ins
 | Platform               |        Execution time  |     Memory peaks (GB) |
 | :--------------------- | ---------------------: | --------------------: |
 | Ruby                   |             1m39.160s  |                 2.79  |
-| Crystal                |             0m19.816s  |                 1.26  |
+| Crystal                |             0m19.816s  |                 1.22  |
 
 ## Considerations
 Crystal proved to be blazing fast slurping large files in memory and filtering data.  

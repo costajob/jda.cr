@@ -2,7 +2,7 @@ require "./spec_helper.cr"
 
 describe JDA::Filters do
   it "should match row by sku" do
-    filter = JDA::Filters::Sku.new(values: %w(806578069 806578067))
+    filter = JDA::Filters::Sku.new(values: %w(804017365 806578069))
     filter.match?(Stubs.rows[0]).should be_true
   end
 

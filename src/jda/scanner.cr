@@ -16,9 +16,8 @@ module JDA
 
     def call(output = MemoryIO.new)
       feeds.each do |feed|
-        feed.read.reduce(@results) do |results, row|
-          results[feed.name] << row if @filters.all? { |filter| filter.match?(row) }
-          results
+        feed.read do |row|
+          @results[feed.name] << row if @filters.all? { |filter| filter.match?(row) }
         end
         Report.new(feed.name, @results[feed.name]).render(output)
       end
