@@ -38,7 +38,7 @@ I registered these benchmarks with a MacBook PRO 15 late 2011 having these specs
 * 8 GB 1333 MHz DDR3
 
 ## Workload
-I stressed the libraries by applying the markdown filter to four CSV with the following features:
+I stressed the libraries by applying the *markdown filter* to four CSV with the following features:
  
 | Name                   |     Weight (MB) |    Rows numbers |
 | :--------------------- | --------------: | --------------: |
@@ -52,9 +52,9 @@ I recorded these numbers by inspecting the RAM and CPU consumption via XCode Ins
 
 | Platform               |        Execution time  |     Memory peaks (GB) |
 | :--------------------- | ---------------------: | --------------------: |
-| Ruby                   |             1m39.160s  |                 2.79  |
-| Crystal                |             0m19.816s  |                 1.22  |
+| Ruby                   |             1m38.671s  |                 3.14  |
+| Crystal                |             0m20.102s  |                 1.20  |
 
 ## Considerations
 Crystal proved to be blazing fast slurping large files in memory and filtering data.  
-Indeed the Ruby version leverage on one process per CSV, while Crystal runs on one thread only: said that Crystal throughput is about x5 than ruby one (i recorded similar results with a GO version, that runs on all cores) 
+Indeed the Ruby version leverage on one process per CSV, while Crystal runs on one thread only: said that Crystal throughput is about x5 than ruby one and one third of consumed memory (i recorded similar results with a GO version, that runs on all cores) 
