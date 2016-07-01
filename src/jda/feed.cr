@@ -2,7 +2,7 @@ require "csv"
 
 module JDA
   class Feed
-    VALID_EXTENSIONS = %w(.txt)
+    VALID_EXTENSIONS = {".txt"}
 
     class NoSrcError < ArgumentError; end
 
