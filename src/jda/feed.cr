@@ -18,7 +18,7 @@ module JDA
       raise NoSrcError.new("missing path to feed") unless @src
     end
 
-    def read
+    def each_row
       File.open(@src.as(String)) do |f| 
         CSV.new(f) do |csv|
           yield(csv.row.to_a)

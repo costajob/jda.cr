@@ -13,7 +13,7 @@ describe JDA::Feed do
     src = File.expand_path("../../samples/ebuskr.txt", __FILE__)
     feed = JDA::Feed.new(src)
     skus = [] of String
-    feed.read do |row|
+    feed.each_row do |row|
       skus << row[0]
     end
     skus.size.should eq 30
