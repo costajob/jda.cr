@@ -1,14 +1,6 @@
 require "./spec_helper.cr"
 
 describe JDA::Scanner do
-  it "should collect results with empty filters" do
-    filters = [] of JDA::Filters::Base
-    scanner = JDA::Scanner.new(filters)
-    scanner.call
-    scanner.results["ebuskr.txt"].size.should eq 30
-    scanner.results["ebuspf1.txt"].size.should eq 24
-  end
-
   it "should collect results by sku filter" do
     filters = [] of JDA::Filters::Base
     filters << JDA::Filters::Sku.new(%w(804511615 806732962 800907730))

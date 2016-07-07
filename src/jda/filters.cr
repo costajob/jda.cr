@@ -6,7 +6,7 @@ module JDA
       def initialize(@values : Array(String), @index : Int8)
       end
 
-      def match?(row : Array(String))
+      def matches?(row : Array(String))
         row[@index].try do |value|
           @values.includes?(value.strip)
         end
